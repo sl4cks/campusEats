@@ -1,0 +1,114 @@
+.navbar-default {
+  /* background-color: #004d00;
+    border-color: white; */
+  background-color: #006940;
+  border-color: #015132;
+}
+.navbar-default .navbar-brand {
+  /*color: white; */
+  color: #febe10;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 25px;
+}
+
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
+  margin-left: 5px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  /* color: #e2d9d9; */
+  color: #fcca41;
+  background-color: transparent;
+}
+.navbar-default .navbar-text {
+  /*color: white; */
+  color: #febe10;
+}
+.navbar-default .navbar-nav > li > a {
+  /*color: white; */
+  color: #febe10;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  /* color: #e2d9d9; */
+  color: #fcca41;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  /* color: #555; */
+  color: #fcca41;
+  background-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:hover,
+.navbar-default .navbar-nav > .disabled > a:focus {
+  /* color: #ccc; */
+  color: #fcca41;
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle {
+  /* border-color: #ddd; */
+    border-color: #febe10;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  /*background-color: #003500; */
+  /*background-color: #00492d; */
+  /*background-color: #005e3a; */
+  background-color: #015132; /* hamburger hover color */
+}
+.navbar-default .navbar-toggle .icon-bar {
+  /* background-color: white; */
+  background-color: #febe10;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  /* border-color: #e7e7e7; */
+  /*border-color: #febe10;  */
+  border-color: white;/* line under navbar above dropdown menu */
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  /* color: #555; */
+  /* background-color: #e7e7e7; */
+}
+
+h5{
+  font-size: 22px;
+}
+
+.form-group{
+  padding-top: 5px;
+}
+
+#cancelOrderBtn {
+  margin-left: 2px;
+  margin-right: 5px;
+}
+
+.btn-primary{
+  background-color: #006940;
+  border-color: #015132;
+  color: #febe10;
+}
+
+.btn-primary:hover{
+  background-color: #015132;
+  color: #fcca41;
+}
+
+.btn-secondary{
+  color: #006940;
+}
+
+.btn-secondary:hover{
+  color: #015132;
+}
+
+.jumbotron{
+  color: #015132;
+}
