@@ -24,6 +24,7 @@ class CEtesting1 {
 		Thread.sleep(1000);
 		gohome.click();
 		Thread.sleep(1000);
+		driver.close();
 	}
 	
 	@Test
@@ -35,6 +36,7 @@ class CEtesting1 {
 		gohome = driver.findElement(By.linkText("Home"));
 		Thread.sleep(1000);
 		gohome.click();
+		driver.close();
 	}
 	
 	@Test
@@ -46,5 +48,6 @@ class CEtesting1 {
 		gohome = driver.findElement(By.linkText("Campus Eats"));
 		Thread.sleep(1000);
 		gohome.click();
+		driver.close();
 	}
 }
