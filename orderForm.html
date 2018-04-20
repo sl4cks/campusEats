@@ -13,6 +13,9 @@
 	.jumbotron{
 		padding-bottom: 20px;
 	}
+	.btn-primary .badge{
+		color: #006940;
+	}
 	</style>
 </head>
 <body>
@@ -41,29 +44,38 @@
 
   <div class="container">
     <div class="jumbotron">
+			<form>
+				<div>
+					<button type="button" class="btn btn-primary pull-right">
+  					Tokens <span id="tokenCount" class="badge badge-light">4</span>
+					</button>
+				</div>
+			</form>
 			<div class="text-center">
       	<h1>Order Form</h1>
 			</div>
-      <div class="form-group">
-      	<label for="orderName">Name</label>
-      	<input type="text" class="form-control" id="orderName" placeholder="What is the name on the order?">
-      </div>
-      <div class="form-group">
-      	<label for="orderLocation">Order Location</label>
-      	<input type="text" class="form-control" id="orderLocation" placeholder="Where did you order from?">
-      </div>
-      <div class="form-group">
-      	<label for="deliveryLocation">Delivery Location</label>
-      	<input type="text" class="form-control" id="deliveryLocation" placeholder="Where is this order being delivered?">
-      </div>
-      <div class="form-group">
-      	<label for="comments">Comments</label>
-      	<!-- <input type="text" class="form-control" id="comments" placeholder="Is there anything else the courier should know?"> -->
-				<textarea class="form-control" id="comments" placeholder="Is there anything else the courier should know?" rows="3" ></textarea>
-      </div>
-			<div>
-				<input type="submit" id="submitform"></input>
-			</div>
+			<form>
+	      <div class="form-group">
+	      	<label for="orderName">Name</label>
+	      	<input type="text" class="form-control" id="orderName" placeholder="What is the name on the order?" required>
+	      </div>
+	      <div class="form-group">
+	      	<label for="orderLocation">Order Location</label>
+	      	<input type="text" class="form-control" id="orderLocation" placeholder="Where did you order from?" required>
+	      </div>
+	      <div class="form-group">
+	      	<label for="deliveryLocation">Delivery Location</label>
+	      	<input type="text" class="form-control" id="deliveryLocation" placeholder="Where is this order being delivered?" required>
+	      </div>
+	      <div class="form-group">
+	      	<label for="comments">Comments</label>
+	      	<!-- <input type="text" class="form-control" id="comments" placeholder="Is there anything else the courier should know?"> -->
+					<textarea class="form-control" id="comments" placeholder="Is there anything else the courier should know?" rows="3"></textarea>
+	      </div>
+				<div>
+					<input type="submit" id="submitform"></input>
+				</div>
+		</form>
     </div>
     <!-- <div>
       <button type="button" class="btn btn-secondary" data-dismiss="cancelOrder">Cancel</button>
