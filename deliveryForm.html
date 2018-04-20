@@ -13,6 +13,9 @@
   #selectDelivery{
     text-align: center;
   }
+	.btn-primary .badge{
+		color: #006940;
+	}
   </style>
 </head>
 <body>
@@ -41,6 +44,11 @@
 
   <div class="container">
     <div class="jumbotron">
+			<div>
+				<button type="button" class="btn btn-primary pull-right">
+					Tokens <span id="tokenCount" class="badge badge-light">4</span>
+				</button>
+			</div>
       <div class="container" id="deliveryTable">
         <h2>Please Select a Delivery to Make:</h2>
         <!-- <p>These are the current orders in need of delivery.</p> -->
@@ -89,7 +97,10 @@
             </tr>
           </tbody>
         </table>
-        <button type="button">Submit</button>
+        <!-- <button type="button">Submit</button> -->
+				<div>
+					<input type="submit" id="submitform"></input>
+				</div>
       </div>
     </div>
   </div>
