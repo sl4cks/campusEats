@@ -54,23 +54,23 @@
 			<div class="text-center">
       	<h1>Order Form</h1>
 			</div>
-			<form action="/info.php" method="get">
+			<form action="/info.php" method="post">
 	      <div class="form-group">
 	      	<label for="orderName">Name</label>
-	      	<input type="text" class="form-control" id="orderName" placeholder="What is the name on the order?" required>
+	      	<input type="text" class="form-control" name="order" id="orderName" placeholder="What is the name on the order?" required>
 	      </div>
 	      <div class="form-group">
 	      	<label for="orderLocation">Order Location</label>
-	      	<input type="text" class="form-control" id="orderLocation" placeholder="Where did you order from?" required>
+	      	<input type="text" class="form-control" name="location" id="orderLocation" placeholder="Where did you order from?" required>
 	      </div>
 	      <div class="form-group">
 	      	<label for="deliveryLocation">Delivery Location</label>
-	      	<input type="text" class="form-control" id="deliveryLocation" placeholder="Where is this order being delivered?" required>
+	      	<input type="text" class="form-control" name="delivery" id="deliveryLocation" placeholder="Where is this order being delivered?" required>
 	      </div>
 	      <div class="form-group">
 	      	<label for="comments">Comments</label>
 	      	<!-- <input type="text" class="form-control" id="comments" placeholder="Is there anything else the courier should know?"> -->
-					<textarea class="form-control" id="comments" placeholder="Is there anything else the courier should know?" rows="3"></textarea>
+					<textarea class="form-control" name="comments" id="comments" maxlength="200" placeholder="Is there anything else the courier should know?" rows="3"></textarea>
 	      </div>
 				<div>
 					<input type="submit" id="submitform"></input>
