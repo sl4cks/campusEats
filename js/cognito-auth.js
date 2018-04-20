@@ -1,9 +1,9 @@
 /*global WildRydes _config AmazonCognitoIdentity AWSCognito*/
 
-var WildRydes = window.WildRydes || {};
+var CampusEats = window.CampusEats || {};
 
 (function scopeWrapper($) {
-    var signinUrl = '/signin.html';
+    var signinUrl = '../index.html';
 
     var poolData = {
         UserPoolId: _config.cognito.userPoolId,
@@ -25,11 +25,11 @@ var WildRydes = window.WildRydes || {};
         AWSCognito.config.region = _config.cognito.region;
     }
 
-    WildRydes.signOut = function signOut() {
+    CampusEats.signOut = function signOut() {
         userPool.getCurrentUser().signOut();
     };
 
-    WildRydes.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
+    CampusEats.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
         var cognitoUser = userPool.getCurrentUser();
 
         if (cognitoUser) {

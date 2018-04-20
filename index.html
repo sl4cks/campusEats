@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="campuseats.css">
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700" rel="stylesheet">
+	<script src="js/signUp.js"></script>
 	<style type="text/css">
 		body{
 			background: url(https://upload.wikimedia.org/wikipedia/commons/3/3d/Mason_Statue.JPG);
@@ -60,7 +61,7 @@
 								<input type="password" class="form-control" id="confirmPassword" placeholder="Please Confirm Your Password" maxlength="8" required>
 							</div>
 							<div>
-								<input type="submit" id="submitform"></input>
+								<input type="submit" onclick="registerUser()" id="submitform"></input>
 							</div>
 					</form>
       	</div>
@@ -87,7 +88,7 @@
 								<input type="password" class="form-control" id="enterPassword" placeholder="Enter Password" maxlength="8" required>
 							</div>
 							<div>
-								<input type="submit" id="submitform"></input>
+								<input type="submit" onclick="authenticate()" id="submitform"></input>
 							</div>
 					</form>
       	</div>
