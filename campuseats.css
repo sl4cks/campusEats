@@ -1,3 +1,4 @@
+/* navbar */
 .navbar-default {
   /* background-color: #004d00;
     border-color: white; */
@@ -76,6 +77,7 @@
   /* color: #555; */
   /* background-color: #e7e7e7; */
 }
+/* end navbar */
 
 h5{
   font-size: 22px;
@@ -111,4 +113,11 @@ h5{
 
 .jumbotron{
   color: #015132;
+}
+
+#submitform{
+  background-color: #006940;
+  border-color: #015132;
+  color: #febe10;
+  margin-top: 5px;
 }

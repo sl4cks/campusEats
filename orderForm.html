@@ -5,6 +5,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="campuseats.css">
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700" rel="stylesheet">
+	<style>
+	#submitform{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.jumbotron{
+		padding-bottom: 20px;
+	}
+	</style>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -24,36 +33,42 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="problemReporting.html">Report Problem</a></li>
-					<li><a href="index.html">Log Out</a></li>
+					<li><a href="afterLogout.html">Log Out</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+
   <div class="container">
     <div class="jumbotron">
-      <h1>Order Form</h1>
+			<div class="text-center">
+      	<h1>Order Form</h1>
+			</div>
       <div class="form-group">
-        <label for="orderName">Name</label>
-        <input type="text" class="form-control" id="orderName" placeholder="What is the name on the order?">
+      	<label for="orderName">Name</label>
+      	<input type="text" class="form-control" id="orderName" placeholder="What is the name on the order?">
       </div>
       <div class="form-group">
-        <label for="orderLocation">Order Location</label>
-        <input type="text" class="form-control" id="orderLocation" placeholder="Where did you order from?">
+      	<label for="orderLocation">Order Location</label>
+      	<input type="text" class="form-control" id="orderLocation" placeholder="Where did you order from?">
       </div>
       <div class="form-group">
-        <label for="deliveryLocation">Delivery Location</label>
-        <input type="text" class="form-control" id="deliveryLocation" placeholder="Where is this order being delivered?">
+      	<label for="deliveryLocation">Delivery Location</label>
+      	<input type="text" class="form-control" id="deliveryLocation" placeholder="Where is this order being delivered?">
       </div>
       <div class="form-group">
-        <label for="comments">Comments</label>
-        <!-- <input type="text" class="form-control" id="comments" placeholder="Is there anything else the courier should know?"> -->
+      	<label for="comments">Comments</label>
+      	<!-- <input type="text" class="form-control" id="comments" placeholder="Is there anything else the courier should know?"> -->
 				<textarea class="form-control" id="comments" placeholder="Is there anything else the courier should know?" rows="3" ></textarea>
       </div>
+			<div>
+				<input type="submit" id="submitform"></input>
+			</div>
     </div>
-    <div>
+    <!-- <div>
       <button type="button" class="btn btn-secondary" data-dismiss="cancelOrder">Cancel</button>
       <button type="button" class="btn btn-primary">Submit</button>
-    </div>
+    </div> -->
   </div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>

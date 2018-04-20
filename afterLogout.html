@@ -1,53 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Campus Eats - Order Status</title>
+	<title>Campus Eats</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="campuseats.css">
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700" rel="stylesheet">
-	<style>
-		.btn-md{
-			background-color: #006940;
-		  border-color: #015132;
-		  color: #febe10;
-			margin-top: 15px;
+	<style type="text/css">
+		body{
+			background: url(https://upload.wikimedia.org/wikipedia/commons/3/3d/Mason_Statue.JPG);
+			background-size: cover;
+			background-position: top;
+		}
+		.jumbotron .btn{
+			margin-top: 4em;
+			font-size: 16px;
+		}
+		h2{
+			font-size: 38px;
 		}
 	</style>
 </head>
 <body>
 	<nav class="navbar navbar-default">
-			<div class="container-fluid">
+		  <div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 			        <span class="sr-only">Toggle navigation</span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
-			    	<span class="icon-bar"></span>
+			    		<span class="icon-bar"></span>
 			    </button>
 				<a class="navbar-brand" href="index.html"></span>  Campus Eats</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar">
-					<li><a href="about.html">About</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="problemReporting.html">Report Problem</a></li>
-					<li><a href="afterLogout.html">Log Out</a></li>
-				</ul>
 			</div>
 		</div>
 	</nav>
 
-	<div class="container">
+  <div class="container">
 		<div class="jumbotron">
-			<div>
-				<h1>Order Status</h1>
+			<div class="text-center">
+				<h2 id="welcometext">You have succesfully logged out of Campus Eats!</h2>
 			</div>
-			<div>
-				<!-- List order status -->
-				<button type="button" class="btn btn-default btn-md">
-          <span class="glyphicon glyphicon-refresh"></span> Refresh
-        </button>
+			<div class="text-center">
+				<a href="index.html" type="button lg" class="btn btn-primary" id="returnhome">Return to Homepage</a>
 			</div>
 		</div>
 	</div>
@@ -56,4 +52,3 @@
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
-</html>

@@ -5,6 +5,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="campuseats.css">
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700" rel="stylesheet">
+	<style>
+		#submitform{
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		.jumbotron{
+			padding-bottom: 20px;
+		}
+	</style>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -32,22 +41,26 @@
 	<div class="container">
     <div class="jumbotron">
       <h1>Report Problem</h1>
-      <div class="form-group">
-      </div>
+      <form>
       <div class="form-group">
         <label for="orderNumber">Order Number</label>
-        <input type="text" class="form-control" id="orderNumber" placeholder="What is the number of the order you had a problem with?">
+        <input type="text" class="form-control" id="orderNumber" placeholder="What is the number of the order you had a problem with?" required></input>
       </div>
       <div class="form-group">
         <label for="description">Description of Problem</label>
         <!-- <input type="text" class="form-control"  id="problem description" placeholder="What was the problem with your order?"> -->
-				<textarea class="form-control" id="problemdescription" rows="3" placeholder="What was the problem with your order?"></textarea>
+				<textarea class="form-control" id="problemdescription" rows="3" placeholder="What was the problem with your order?" required></textarea>
       </div>
+			<div>
+				<input type="submit" id ="submitform"></input>
+			</div>
+		</form>
     </div>
-    <div>
+
+    <!-- <div>
       <button type="button" class="btn btn-secondary" data-dismiss="cancelOrder">Cancel</button>
       <button type="button" class="btn btn-primary">Submit</button>
-    </div>
+    </div> -->
   </div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
