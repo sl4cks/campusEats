@@ -12,8 +12,15 @@
 
 	$sql = 'SELECT * FROM FormsDatabase';
 	$query = mysqli_query($conn, $sql);
+	
+	$sql_acc = 'SELECT * FROM UserAccountsDatabase';
+	$query_acc = mysqli_query($conn, $sql_acc);
 
 	if (!$query) {
+		die ('SQL Error: ' . mysqli_error($conn));
+	}
+	
+	if (!$query_acc) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
 ?>
@@ -65,7 +72,7 @@
 				<button type="button" class="btn btn-primary pull-right">
 					Tokens <span id="tokenCount" class="badge badge-light">
 						<?php //PHP
-							while ($row = mysqli_fetch_array($query))
+							while ($row = mysqli_fetch_array($query_acc))
 								{
 									echo "$row[tokens]";
 								}
