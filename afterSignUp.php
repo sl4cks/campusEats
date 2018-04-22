@@ -1,4 +1,29 @@
 <!DOCTYPE html>
+
+<?php
+	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
+	$db_user = 'campuseats';
+	$db_pass = 'campuseats1';
+	$db_name = 'campuseats';
+
+	$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+	if (!$conn) {
+		die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+	}
+
+	//if the user got here by submitting a form, run the code
+	if(isset($_POST['netID'])) {
+		$uID = rand(1000000, 9999999);
+		$user = $_POST["netID"];
+		$pass = $_POST["password"];
+
+		mysqli_query($conn, "INSERT INTO campuseats.UserAccountsDatabase (userID, enterMasonNetID, enterPassword, isverified, tokens)
+																	VALUES ('$uID', '$user', '$pass', 0, 5)")
+			or die(mysqli_error($conn));
+	}
+	$conn->close();
+?>
+
 <html>
 <head>
 	<title>Campus Eats - After Sign Up</title>
