@@ -12,8 +12,15 @@
 
 	$sql = 'SELECT * FROM FormsDatabase';
 	$query = mysqli_query($conn, $sql);
+	
+	$sql_acc = 'SELECT * FROM UserAccountsDatabase';
+	$query_acc = mysqli_query($conn, $sql_acc);
 
 	if (!$query) {
+		die ('SQL Error: ' . mysqli_error($conn));
+	}
+	
+	if (!$query_acc) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
 ?>
@@ -63,7 +70,15 @@
     <div class="jumbotron">
 			<div>
 				<button type="button" class="btn btn-primary pull-right">
-					Tokens <span id="tokenCount" class="badge badge-light">4</span>
+					Tokens <span id="tokenCount" class="badge badge-light">
+						<?php //PHP
+							while ($row = mysqli_fetch_array($query_acc))
+								{
+									echo "$row[tokens]";
+								}
+								$conn->close();
+						?>
+					</span>
 				</button>
 			</div>
       <div class="container" id="deliveryTable">
@@ -98,7 +113,17 @@
           </tbody>
         </table>
 				<div>
-					<input type="submit" id="submitform"></input>
+					<?php
+						function updatetoken(){
+							$userid = "hsingh20";
+							mysqli_query("
+   					 			UPDATE UserAccountsDatabase
+   								SET tokens = tokens + 1
+    							WHERE userID = '".$userid."'
+										");
+						}
+					?>
+					<input type="submit" id="submitform" onclick = "updatetoken()"></input> 
 				</div>
       </div>
     </div>

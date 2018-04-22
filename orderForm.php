@@ -16,22 +16,29 @@
 		die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 	}
 
-	$sql = 'SELECT * FROM FormsDatabase';
-	$query = mysqli_query($conn, $sql);
+	$sql_form = 'SELECT * FROM FormsDatabase';
+	$query_form = mysqli_query($conn, $sql_form);
+	
+	$sql_acc = 'SELECT  * FROM UserAccountsDatabase';
+	$query_acc = mysqli_query($conn, $sql_acc);
 
-	if (!$query) {
+	if (!$query_form) {
+		die ('SQL Error: ' . mysqli_error($conn));
+	}
+	
+	if (!$query_acc) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
 
-	$resultcount = mysql_numrows($sqlsearch);
+	$resultcount = mysqli_num_rows($sqlsearch);
 
 	if ($resultcount > 0) {
 		$formID = rand();
 	}
-
-	mysql_query("INSERT INTO 'campuseats'.'FormsDatabase' ('formID', 'orderName', 'orderLocation', 'delivLocation', 'comments')
+	//check here for error.	
+	mysqli_query($conn, "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments)
 															 VALUES ('$formID', '$orderName', '$orderLocation', '$delivLocation', '$comments')")
-		or die(mysql_error());
+		or die(mysqli_error($conn));
 
 ?>
 <html>
@@ -82,7 +89,15 @@
 			<form>
 				<div>
 					<button type="button" class="btn btn-primary pull-right">
-  					Tokens <span id="tokenCount" class="badge badge-light">4</span>
+  					Tokens <span id="tokenCount" class="badge badge-light">
+							<?php //PHP
+								while ($row = mysqli_fetch_array($query_acc))
+									{
+										echo "$row[tokens]";
+									}
+									$conn->close();
+							?>
+						</span>
 					</button>
 				</div>
 			</form>
@@ -108,7 +123,18 @@
 					<textarea class="form-control" name="comments" id="comments" maxlength="200" placeholder="Is there anything else the courier should know?" rows="3"></textarea>
 	      </div>
 				<div>
-					<input type="submit" id="submitform"></input>
+					<?php
+						function updatetoken(){
+							$userid = "hsingh20";
+							mysqli_query($conn, "
+   					 			UPDATE UserAccountsDatabase
+   								SET tokens = tokens - 1
+    							WHERE userID = '".$userid."'
+										");
+						}
+					?>
+				
+					<input type="submit" id="submitform" onclick = "updatetoken()"></input>
 				</div>
 		</form>
     </div>
