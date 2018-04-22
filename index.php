@@ -8,9 +8,12 @@
 	<script src="js/userAuth.js"></script>
 	<style type="text/css">
 		body{
-			background: url(https://upload.wikimedia.org/wikipedia/commons/3/3d/Mason_Statue.JPG);
-			background-size: cover;
-			background-position: top;
+			background: url(IMG_8993.JPG);
+			height: 100%;
+			background-attachment: fixed;
+			background-position: center;
+	 		background-repeat: no-repeat;
+	 		background-size: cover;
 		}
 	</style>
 </head>
