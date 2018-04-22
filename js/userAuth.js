@@ -124,7 +124,8 @@ function authenticate() {
         },
 
         onFailure: function(err) {
-            alert(err.message || JSON.stringify(err));
+            //alert(err.message || JSON.stringify(err));
+            alert("Error, login unsuccessful")
         },
 
     });
