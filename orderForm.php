@@ -16,10 +16,17 @@
 		die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 	}
 
-	$sql = 'SELECT * FROM FormsDatabase';
-	$query = mysqli_query($conn, $sql);
+	$sql_form = 'SELECT * FROM FormsDatabase';
+	$query_form = mysqli_query($conn, $sql_form);
+	
+	$sql_acc = 'SELECT  * FROM UserAccountsDatabase';
+	$query_acc = mysqli_query($conn, $sql_acc);
 
-	if (!$query) {
+	if (!$query_form) {
+		die ('SQL Error: ' . mysqli_error($conn));
+	}
+	
+	if (!$query_acc) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
 
@@ -28,8 +35,8 @@
 	if ($resultcount > 0) {
 		$formID = rand();
 	}
-
-	mysql_query("INSERT INTO 'campuseats'.'FormsDatabase' ('formID', 'orderName', 'orderLocation', 'delivLocation', 'comments')
+	//check here for error.
+	mysql_query("INSERT INTO 'FormsDatabase' ('formID', 'orderName', 'orderLocation', 'delivLocation', 'comments')
 															 VALUES ('$formID', '$orderName', '$orderLocation', '$delivLocation', '$comments')")
 		or die(mysql_error());
 
@@ -84,7 +91,7 @@
 					<button type="button" class="btn btn-primary pull-right">
   					Tokens <span id="tokenCount" class="badge badge-light">
 							<?php //PHP
-								while ($row = mysqli_fetch_array($query))
+								while ($row = mysqli_fetch_array($query_acc))
 									{
 										echo "$row[tokens]";
 									}
