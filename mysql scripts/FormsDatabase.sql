@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS FormsDatabase (
     orderLocation VARCHAR(100) NOT NULL,
 	delivLocation VARCHAR(100) NOT NULL,
     comments VARCHAR(200) NOT NULL,
-    dateID TIMESTAMP
+    dateID DATETIME
     
 );
