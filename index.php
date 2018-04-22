@@ -92,16 +92,8 @@
 							</div>
 					</form>
       	</div>
-				<!-- <div class="modal-footer">
-        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        	<button type="button" class="btn btn-primary" href="choose.php">Submit</button>
-      	</div> -->
     	</div>
   	</div>
-	</div>
-
-	<div>
-		<a href="deliveryForm.php">Jump right to delivery form!</a>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
