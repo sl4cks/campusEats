@@ -117,6 +117,7 @@ function authenticate() {
                      console.log('Successfully logged!');
                 }
             });
+            window.location.href = "../choose.html";
         },
 
         onFailure: function(err) {
