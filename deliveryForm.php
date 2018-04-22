@@ -3,7 +3,7 @@
 	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
 	$db_username = 'campuseats';
 	$db_password = 'campuseats1';
-	$db_name = 'campuseatsdb';
+	$db_name = 'campuseats';
 
 	$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 	if (!$conn) {
@@ -27,7 +27,6 @@
   .form-check{
     text-align: center;
   }
-
   #selectDelivery{
     text-align: center;
   }
@@ -83,7 +82,7 @@
 						<?php //PHP
 							while ($row = mysqli_fetch_array($query))
 								{
-									echo '<tr>
+									echo "<tr>
 											<td>
 												<div class="form-check">
 													<input class="form-check-input" type="checkbox" value="" id="check1">
@@ -92,42 +91,11 @@
 											<td>'.$row['dateID'].'</td>
 											<td>'.$row['orderLocation'].'</td>
 											<td>'.$row['delivLocation'].'</td>
-										</tr>';
+										</tr>";
 								}
 						?>
-            <!-- <tr>
-              <td>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="check1">
-                </div>
-              </td>
-              <td>2:00pm</td>
-              <td>Engineering Building</td>
-              <td>Einstein Brothers</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="check2">
-                </div>
-              </td>
-              <td>3:15pm</td>
-              <td>Johnson Center</td>
-              <td>Chipotle</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="check3">
-                </div>
-              </td>
-              <td>3:45pm</td>
-              <td>Johnson Center</td>
-              <td>University Bookstore</td>
-            </tr> -->
           </tbody>
         </table>
-        <!-- <button type="button">Submit</button> -->
 				<div>
 					<input type="submit" id="submitform"></input>
 				</div>
