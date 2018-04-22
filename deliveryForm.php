@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
 	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
-	$db_username = 'campuseats';
-	$db_password = 'campuseats1';
+	$db_user = 'campuseats';
+	$db_pass = 'campuseats1';
 	$db_name = 'campuseats';
 
 	$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
@@ -45,15 +45,15 @@
 			      <span class="icon-bar"></span>
 			    	<span class="icon-bar"></span>
 			    </button>
-				<a class="navbar-brand" href="index.php"></span>  Campus Eats</a>
+				<a class="navbar-brand" href="index.html"></span>  Campus Eats</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar">
-					<li><a href="about.php">About</a></li>
+					<li><a href="about.html">About</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="problemReporting.php">Report Problem</a></li>
-					<li><a href="afterLogout.php">Log Out</a></li>
+					<li><a href="problemReporting.html">Report Problem</a></li>
+					<li><a href="afterLogout.html">Log Out</a></li>
 				</ul>
 			</div>
 		</div>
@@ -84,15 +84,16 @@
 								{
 									echo "<tr>
 											<td>
-												<div class="form-check">
-													<input class="form-check-input" type="checkbox" value="" id="check1">
+												<div class='form-check'>
+													<input class='form-check-input' type='checkbox' value='' id='check1'>
 												</div>
 											</td>
-											<td>'.$row['dateID'].'</td>
-											<td>'.$row['orderLocation'].'</td>
-											<td>'.$row['delivLocation'].'</td>
+											<td>$row[dateID]</td>
+											<td>$row[orderLocation]</td>
+											<td>$row[delivLocation]</td>
 										</tr>";
 								}
+								$conn->close();
 						?>
           </tbody>
         </table>

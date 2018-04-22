@@ -1,24 +1,24 @@
 <?php
 	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
-	$db_username = 'campuseats';
-	$db_password = 'campuseats1';
+	$db_user = 'campuseats';
+	$db_pass = 'campuseats1';
 	$db_name = 'campuseats';
-	
+
 	$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 	if (!$conn) {
-		die ('Failed to connect to MySQL: ' . mysqli_connect_error());	
+		die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 	}
-	
+
 	$sql = 'SELECT * FROM FormsDatabase';
 	$query = mysqli_query($conn, $sql);
-	
+
 	if (!$query) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
 ?>
 
 <html>
-<head> 
+<head>
 	<title> INSERT TITLE HERE </title>
 	<style type="text/css">
 		body {
@@ -44,7 +44,7 @@
 		table td {
 			transition: all .5s;
 		}
-		
+
 		/* Table */
 		.data-table {
 			border-collapse: collapse;
@@ -52,7 +52,7 @@
 			min-width: 537px;
 		}
 
-		.data-table th, 
+		.data-table th,
 		.data-table td {
 			border: 1px solid #e1edff;
 			padding: 7px 17px;
@@ -111,7 +111,7 @@
 				<th>Order Name</th>
 				<th>Order Location</th>
 				<th>Delivery Location</th>
-				
+
 			</tr>
 		</thead>
 		<tbody>
@@ -123,6 +123,7 @@
 					<td>'.$row['delivLocation'].'</td>
 					<td>'.$row['dateID'].'</td>
 				</tr>';
+			$conn->close();
 		}?>
 		</tbody>
 		<tfoot>
@@ -133,4 +134,4 @@
 		</tfoot>
 	</table>
 </body>
-</html>	
+</html>
