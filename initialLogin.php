@@ -47,7 +47,7 @@
         </div>
         <div class="form-group">
           <label for="confirmPassword">Confirmation Number</label>
-          <input type="number" class="form-control" id="confirmCode" placeholder="Please enter your confirmation number" required>
+          <input type="number" class="form-control" id="confirmCode" placeholder="Please enter your confirmation number" maxlength="12" required>
         </div>
         <div>
           <input type="submit" onclick="confirm()" id="submitform"></input>

@@ -54,21 +54,17 @@
 							</div>
 							<div class="form-group">
 								<label for="createPassword">Password</label>
-								<input type="password" class="form-control" id="createPassword" placeholder="Create a Password" maxlength="8" required>
+								<input type="password" class="form-control" id="createPassword" placeholder="Create a Password" maxlength="12" required>
 							</div>
 							<div class="form-group">
 								<label for="confirmPassword">Confirm Password</label>
-								<input type="password" class="form-control" id="confirmPassword" placeholder="Please Confirm Your Password" maxlength="8" required>
+								<input type="password" class="form-control" id="confirmPassword" placeholder="Please Confirm Your Password" maxlength="12" required>
 							</div>
 							<div>
 								<input type="submit" onclick="registerUser()" id="submitform" href="afterSignUp.php"></input>
 							</div>
 					</form>
       	</div>
-				<!-- <div class="modal-footer">
-        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        	<button type="button" class="btn btn-primary" href="choose.php">Submit</button>
-      	</div> -->
     	</div>
   	</div>
 	</div>
@@ -89,7 +85,7 @@
 							</div>
 							<div class="form-group">
 								<label for="createPassword">Password</label>
-								<input type="password" class="form-control" id="enterPassword" placeholder="Enter Password" maxlength="8" required>
+								<input type="password" class="form-control" id="enterPassword" placeholder="Enter Password" maxlength="12" required>
 							</div>
 							<div>
 								<input type="submit" onclick="authenticate()" id="submitform" href="choose.php"></input>
