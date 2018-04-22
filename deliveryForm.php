@@ -13,7 +13,7 @@
 	$sql = 'SELECT * FROM FormsDatabase';
 	$query = mysqli_query($conn, $sql);
 	
-	$sql_acc = 'SELECT * FROM UserAccountDatabase';
+	$sql_acc = 'SELECT * FROM UserAccountsDatabase';
 	$query_acc = mysqli_query($conn, $sql_acc);
 
 	if (!$query) {
