@@ -20,6 +20,15 @@
 		mysqli_query($conn, "INSERT INTO campuseats.UserAccountsDatabase (userID, enterMasonNetID, enterPassword, isverified, tokens)
 																	VALUES ('$uID', '$user', '$pass', 0, 5)")
 			or die(mysqli_error($conn));
+
+		$to = $user."@gmu.edu"; // this is your Email address
+		$from = "ymahmou@masonlive.gmu.edu"; // this is the sender's Email address
+		$subject = "Please Confirm you CampusEats Account";
+		$message = wordwrap($message,70);
+		$message = "Thanks for signing up for CampusEats, Here's your verification code: ".uID.
+		" Just insert your verification code in the link ".<a href="initialLogin.php">HERE!</a>
+		$headers = "From:" . $from;
+		mail($to,$subject,$message,$headers);
 	}
 	$conn->close();
 ?>
