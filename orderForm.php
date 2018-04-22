@@ -82,7 +82,15 @@
 			<form>
 				<div>
 					<button type="button" class="btn btn-primary pull-right">
-  					Tokens <span id="tokenCount" class="badge badge-light">4</span>
+  					Tokens <span id="tokenCount" class="badge badge-light">
+							<?php //PHP
+								while ($row = mysqli_fetch_array($query))
+									{
+										echo "$row[tokens]";
+									}
+									$conn->close();
+							?>
+						</span>
 					</button>
 				</div>
 			</form>
