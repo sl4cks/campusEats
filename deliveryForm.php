@@ -3,7 +3,7 @@
 	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
 	$db_username = 'campuseats';
 	$db_password = 'campuseats1';
-	$db_name = 'campuseats';
+	$db_name = 'campuseatsdb';
 
 	$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 	if (!$conn) {
@@ -17,7 +17,6 @@
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
 ?>
-
 <html>
 <head>
 	<title>Campus Eats - Delivery</title>
@@ -82,14 +81,20 @@
           </thead>
           <tbody>
 						<?php //PHP
-						while ($row = mysqli_fetch_array($query))
-						{
-							echo '<tr>
-									<td>'.$row['orderLocation'].'</td>
-									<td>'.$row['delivLocation'].'</td>
-									<td>'.$row['dateID'].'</td>
-								</tr>';
-						}?>
+							while ($row = mysqli_fetch_array($query))
+								{
+									echo '<tr>
+											<td>
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="check1">
+												</div>
+											</td>
+											<td>'.$row['dateID'].'</td>
+											<td>'.$row['orderLocation'].'</td>
+											<td>'.$row['delivLocation'].'</td>
+										</tr>';
+								}
+						?>
             <!-- <tr>
               <td>
                 <div class="form-check">
