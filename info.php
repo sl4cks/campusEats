@@ -6,16 +6,23 @@
 	$delivLocation = $_POST['delivery'];
 	$comments = $_POST['comments'];
 	
-	$db_host = '';
+	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
 	$db_username = 'campuseats';
 	$db_password = 'campuseats1';
 	$db_name = 'campuseats';
 	
-	mysql_connect($db_host, $db_username, $db_password);
-	mysql_select_db($db_name);
+	$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+	if (!$conn) {
+		die ('Failed to connect to MySQL: ' . mysqli_connect_error());	
+	}
 	
-	$query = "SELECT * FORM 'campuseats'.'FormsDatabase' WHERE 'formID' = '$SformID'";
-	$sqlsearch = mysql_query($query);
+	$sql = 'SELECT * FROM FormsDatabase';
+	$query = mysqli_query($conn, $sql);
+	
+	if (!$query) {
+		die ('SQL Error: ' . mysqli_error($conn));
+	}
+	
 	$resultcount = mysql_numrows($sqlsearch);
 
 	if ($resultcount > 0) {

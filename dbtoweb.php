@@ -1,5 +1,5 @@
 <?php
-	$db_host = ''; //server name
+	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
 	$db_username = 'campuseats';
 	$db_password = 'campuseats1';
 	$db_name = 'campuseats';
@@ -19,7 +19,7 @@
 
 <html>
 <head> 
-	<title> INSERT TITLE HERER </title>
+	<title> INSERT TITLE HERE </title>
 	<style type="text/css">
 		body {
 			font-size: 15px;
@@ -116,18 +116,13 @@
 		</thead>
 		<tbody>
 		<?php //PHP
-		$no 	= 1;
 		while ($row = mysqli_fetch_array($query))
 		{
-			//$amount  = $row['amount'] == 0 ? '' : number_format($row['amount']);
 			echo '<tr>
-					<td>'.$no.'</td>
-					<td>'.$row['formID'].'</td>
-					<td>'.$row['orderName'].'</td>
 					<td>'.$row['orderLocation'].'</td>
 					<td>'.$row['delivLocation'].'</td>
+					<td>'.$row['dateID'].'</td>
 				</tr>';
-			$no++;
 		}?>
 		</tbody>
 		<tfoot>

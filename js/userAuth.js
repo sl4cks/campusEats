@@ -37,6 +37,9 @@ function registerUser() {
             alert(err.message || JSON.stringify(err));
             return;
         }
+        else {
+          window.location.href = "../afterSignUp.html";
+        }
         cognitoUser = result.user;
         console.log('user name is ' + cognitoUser.getUsername());
     });
@@ -117,6 +120,7 @@ function authenticate() {
                      console.log('Successfully logged!');
                 }
             });
+            window.location.href = "../choose.html";
         },
 
         onFailure: function(err) {
