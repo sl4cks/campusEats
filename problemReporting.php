@@ -5,8 +5,8 @@
 	$problemDescription = $_POST['problemdescription'];
 
 	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
-	$db_username = 'campuseats';
-	$db_password = 'campuseats1';
+	$db_user = 'campuseats';
+	$db_pass = 'campuseats1';
 	$db_name = 'campuseats';
 
 	$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
@@ -30,7 +30,7 @@
 	mysql_query("INSERT INTO 'ProblemReportingDatabase' ('formID', 'problemDescription')
                                VALUES ('$formID', '$problemDescription')")
     or die(mysql_error());
-
+		$conn->close();
 ?>
 <html>
 <head>
