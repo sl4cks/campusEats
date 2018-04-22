@@ -29,7 +29,7 @@
 		$formID = rand();
 	}
 	
-	mysql_query("INSERT INTO 'campuseats'.'FormsDatabase' ('formID', 'orderName', 'orderLocation', 'delivLocation', 'comments') 
+	mysql_query("INSERT INTO 'FormsDatabase' ('formID', 'orderName', 'orderLocation', 'delivLocation', 'comments') 
                                VALUES ('$formID', '$orderName', '$orderLocation', '$delivLocation', '$comments')") 
     or die(mysql_error());  
 		
