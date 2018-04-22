@@ -113,7 +113,17 @@
           </tbody>
         </table>
 				<div>
-					<input type="submit" id="submitform"></input>
+					<?php
+						function updatetoken(){
+							$userid = "hsingh20";
+							mysqli_query("
+   					 			UPDATE UserAccountsDatabase
+   								SET tokens = tokens + 1
+    							WHERE userID = '".$userid."'
+										");
+						}
+					?>
+					<input type="submit" id="submitform" onclick = "updatetoken()"></input> 
 				</div>
       </div>
     </div>

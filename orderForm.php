@@ -30,15 +30,15 @@
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
 
-	$resultcount = mysql_numrows($sqlsearch);
+	$resultcount = mysqli_num_rows($sqlsearch);
 
 	if ($resultcount > 0) {
 		$formID = rand();
 	}
-	//check here for error.
-	mysql_query("INSERT INTO 'FormsDatabase' ('formID', 'orderName', 'orderLocation', 'delivLocation', 'comments')
+	//check here for error.	
+	mysqli_query($conn, "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments)
 															 VALUES ('$formID', '$orderName', '$orderLocation', '$delivLocation', '$comments')")
-		or die(mysql_error());
+		or die(mysqli_error($conn));
 
 ?>
 <html>
@@ -123,7 +123,18 @@
 					<textarea class="form-control" name="comments" id="comments" maxlength="200" placeholder="Is there anything else the courier should know?" rows="3"></textarea>
 	      </div>
 				<div>
-					<input type="submit" id="submitform"></input>
+					<?php
+						function updatetoken(){
+							$userid = "hsingh20";
+							mysqli_query($conn, "
+   					 			UPDATE UserAccountsDatabase
+   								SET tokens = tokens - 1
+    							WHERE userID = '".$userid."'
+										");
+						}
+					?>
+				
+					<input type="submit" id="submitform" onclick = "updatetoken()"></input>
 				</div>
 		</form>
     </div>
