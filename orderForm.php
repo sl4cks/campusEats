@@ -104,7 +104,7 @@
 			<div class="text-center">
       	<h1>Order Form</h1>
 			</div>
-			<form action="/info.php" method="post">
+			<form>
 	      <div class="form-group">
 	      	<label for="orderName">Name</label>
 	      	<input type="text" class="form-control" name="order" id="orderName" placeholder="What is the name on the order?" required>
