@@ -11,7 +11,7 @@
 	}
 
 	//if the user got here by submitting a form, run the code
-	if(isset($_POST['netID'])) {
+	if(isset($_POST["netID"])) {
 		$uID = rand(1000000, 9999999);
 		$user = $_POST["netID"];
 		$pass = $_POST["password"];
@@ -20,7 +20,7 @@
 																	VALUES ('$uID', '$user', '$pass', 0, 5)")
 			or die(mysqli_error($conn));
 
-		$to = $_POST['netID']."@gmu.edu"; // this is your Email address
+		$to = $_POST["netID"]."@gmu.edu"; // this is your Email address
 		$from = "ymahmou@masonlive.gmu.edu"; // this is the sender's Email address
 		$subject = "Please Confirm you CampusEats Account";
 		$message = "Thanks for signing up for CampusEats, Here's your verification code: ".$uID.
