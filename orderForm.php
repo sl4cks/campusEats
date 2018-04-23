@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <?php
-	$formID = rand();
-	$orderName = $_POST['order'];
-	$orderLocation = $_POST['location'];
-	$delivLocation = $_POST['delivery'];
-	$comments = $_POST['comments'];
-
 	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
 	$db_user = 'campuseats';
 	$db_pass = 'campuseats1';
 	$db_name = 'campuseats';
-
 	$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
 	if (!$conn) {
 		die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 	}
 
 	$sql_form = 'SELECT * FROM FormsDatabase';
 	$query_form = mysqli_query($conn, $sql_form);
-
 	$sql_acc = 'SELECT  * FROM UserAccountsDatabase';
 	$query_acc = mysqli_query($conn, $sql_acc);
 
@@ -30,23 +23,18 @@
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
 
-	$resultcount = mysqli_num_rows($sqlsearch);
+	if(isset($_POST["order"])) {
+	$formID = rand();
+	$orderName = $_POST['order'];
+	$orderLocation = $_POST['location'];
+	$delivLocation = $_POST['delivery'];
+	$comments = $_POST['comments'];
 
-	if ($resultcount > 0) {
-		$formID = rand();
-	}
 	//check here for error.
-<<<<<<< HEAD
-	$sql  = "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments) VALUES (?, ?, ?, ?, ?)";
-	$stmt = mysqli_prepare($sql);
-	$stmt->bind_param("isss", $formID $_POST['formID'], $_POST['order'], $_POST['location'], $_POST['delivery'], $_POST['comments']);
-	$stmt->execute();
-=======
 	mysqli_query($conn, "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments)
 															 VALUES ('$formID', '$orderName', '$orderLocation', '$delivLocation', '$comments')")
 		or die(mysqli_error($conn));
-
->>>>>>> parent of 5bbc256... orderform updates
+	}
 ?>
 <html>
 <head>
@@ -139,7 +127,6 @@
     							WHERE userID = '".$userid."'
 										");
 						}
-						$conn->close();
 					?>
 
 					<input type="submit" id="submitform" onclick = "updatetoken()"></input>
