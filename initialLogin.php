@@ -68,7 +68,7 @@
           <input type="number" class="form-control" id="confirmCode" placeholder="Please enter your confirmation number" maxlength="12" required>
         </div>
         <div>
-          <input type="submit" onclick="confirm()" id="submitform"></input>
+          <input type="submit" onclick="window.open('choose.php')" id="submitform"></input>
         </div>
       </form>
     </div>
