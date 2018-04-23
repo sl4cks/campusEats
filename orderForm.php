@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <?php
-	//prolly>?
 	$formID = rand();
-	//$orderName = $_POST['order'];
-	//$orderLocation = $_POST['location'];
-	//$delivLocation = $_POST['delivery'];
-	//$comments = $_POST['comments'];
+	$orderName = $_POST['order'];
+	$orderLocation = $_POST['location'];
+	$delivLocation = $_POST['delivery'];
+	$comments = $_POST['comments'];
 
 	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
 	$db_user = 'campuseats';
@@ -37,10 +36,17 @@
 		$formID = rand();
 	}
 	//check here for error.
+<<<<<<< HEAD
 	$sql  = "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments) VALUES (?, ?, ?, ?, ?)";
 	$stmt = mysqli_prepare($sql);
 	$stmt->bind_param("isss", $formID $_POST['formID'], $_POST['order'], $_POST['location'], $_POST['delivery'], $_POST['comments']);
 	$stmt->execute();
+=======
+	mysqli_query($conn, "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments)
+															 VALUES ('$formID', '$orderName', '$orderLocation', '$delivLocation', '$comments')")
+		or die(mysqli_error($conn));
+
+>>>>>>> parent of 5bbc256... orderform updates
 ?>
 <html>
 <head>
@@ -105,7 +111,7 @@
 			<div class="text-center">
       	<h1>Order Form</h1>
 			</div>
-			<form action="/info.php" method="post">
+			<form>
 	      <div class="form-group">
 	      	<label for="orderName">Name</label>
 	      	<input type="text" class="form-control" name="order" id="orderName" placeholder="What is the name on the order?" required>
@@ -133,6 +139,7 @@
     							WHERE userID = '".$userid."'
 										");
 						}
+						$conn->close();
 					?>
 
 					<input type="submit" id="submitform" onclick = "updatetoken()"></input>
