@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <?php
+	//prolly>?
 	$formID = rand();
-	$orderName = $_POST['order'];
-	$orderLocation = $_POST['location'];
-	$delivLocation = $_POST['delivery'];
-	$comments = $_POST['comments'];
+	//$orderName = $_POST['order'];
+	//$orderLocation = $_POST['location'];
+	//$delivLocation = $_POST['delivery'];
+	//$comments = $_POST['comments'];
 
 	$db_host = 'campuseatsdb.cbbdidcdihbq.us-east-1.rds.amazonaws.com'; //server name
 	$db_user = 'campuseats';
@@ -18,14 +19,14 @@
 
 	$sql_form = 'SELECT * FROM FormsDatabase';
 	$query_form = mysqli_query($conn, $sql_form);
-
+	
 	$sql_acc = 'SELECT  * FROM UserAccountsDatabase';
 	$query_acc = mysqli_query($conn, $sql_acc);
 
 	if (!$query_form) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
-
+	
 	if (!$query_acc) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
@@ -35,11 +36,11 @@
 	if ($resultcount > 0) {
 		$formID = rand();
 	}
-	//check here for error.
-	mysqli_query($conn, "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments)
-															 VALUES ('$formID', '$orderName', '$orderLocation', '$delivLocation', '$comments')")
-		or die(mysqli_error($conn));
-
+	//check here for error.	
+	$sql  = "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments) VALUES (?, ?, ?, ?, ?)");
+	$stmt = mysqli_prepare($sql);
+	$stmt->bind_param("isss", $formID $_POST['formID'], $_POST['order'], $_POST['location'], $_POST['delivery'], $_POST['comments']);
+	$stmt->execute();
 ?>
 <html>
 <head>
@@ -104,7 +105,7 @@
 			<div class="text-center">
       	<h1>Order Form</h1>
 			</div>
-			<form>
+			<form action="/info.php" method="post">
 	      <div class="form-group">
 	      	<label for="orderName">Name</label>
 	      	<input type="text" class="form-control" name="order" id="orderName" placeholder="What is the name on the order?" required>
@@ -132,9 +133,8 @@
     							WHERE userID = '".$userid."'
 										");
 						}
-						$conn->close();
 					?>
-
+				
 					<input type="submit" id="submitform" onclick = "updatetoken()"></input>
 				</div>
 		</form>
