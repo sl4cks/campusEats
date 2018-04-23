@@ -18,14 +18,14 @@
 
 	$sql_form = 'SELECT * FROM FormsDatabase';
 	$query_form = mysqli_query($conn, $sql_form);
-	
+
 	$sql_acc = 'SELECT  * FROM UserAccountsDatabase';
 	$query_acc = mysqli_query($conn, $sql_acc);
 
 	if (!$query_form) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
-	
+
 	if (!$query_acc) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
@@ -35,7 +35,7 @@
 	if ($resultcount > 0) {
 		$formID = rand();
 	}
-	//check here for error.	
+	//check here for error.
 	mysqli_query($conn, "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments)
 															 VALUES ('$formID', '$orderName', '$orderLocation', '$delivLocation', '$comments')")
 		or die(mysqli_error($conn));
@@ -104,7 +104,7 @@
 			<div class="text-center">
       	<h1>Order Form</h1>
 			</div>
-			<form action="/info.php" method="post">
+			<form>
 	      <div class="form-group">
 	      	<label for="orderName">Name</label>
 	      	<input type="text" class="form-control" name="order" id="orderName" placeholder="What is the name on the order?" required>
@@ -133,7 +133,7 @@
 										");
 						}
 					?>
-				
+
 					<input type="submit" id="submitform" onclick = "updatetoken()"></input>
 				</div>
 		</form>
