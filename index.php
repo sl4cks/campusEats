@@ -87,7 +87,7 @@
 								<input type="password" class="form-control" id="enterPassword" placeholder="Enter Password" maxlength="12" required>
 							</div>
 							<div>
-								<input type="submit" onclick="authenticate()" id="submitform" href="choose.php"></input>
+								<input type="submit" onclick="window.open('choose.php')" id="submitform" href="choose.php"></input>
 							</div>
 					</form>
       	</div>
