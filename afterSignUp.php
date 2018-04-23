@@ -25,9 +25,8 @@
 		$subject = "Please Confirm you CampusEats Account";
 		$message = "Thanks for signing up for CampusEats, Here's your verification code: ".$uID.
 		" Just insert your verification code in the link <a href='initialLogin.php'>HERE!</a>";
-		$message = wordwrap($message,70);
-		$headers = "From:" . $from;
-		mail($to,$subject,$message,$headers);
+		$message = wordwrap($message,69);
+		mail($to,$subject,$message);
 	}
 	$conn->close();
 ?>
