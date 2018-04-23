@@ -50,21 +50,21 @@
         	</button></h4>
       	</div>
       	<div class="modal-body">
-        	<form method = "signup">
+        	<form action="afterSignUp.php" method="post">
 							<div class="form-group">
 									<label for="masonNetID">Net ID</label>
-									<input type="text" class="form-control" id="enterMasonNetID" placeholder="Enter your Mason NetID" maxlength="8" required>
+									<input type="text" name="netID" class="form-control" id="enterMasonNetID" placeholder="Enter your Mason NetID" maxlength="8" required>
 							</div>
 							<div class="form-group">
 								<label for="createPassword">Password</label>
-								<input type="password" class="form-control" id="createPassword" placeholder="Create a Password" maxlength="12" required>
+								<input type="password" name="password" class="form-control" id="createPassword" placeholder="Create a Password" maxlength="12" required>
 							</div>
 							<div class="form-group">
 								<label for="confirmPassword">Confirm Password</label>
 								<input type="password" class="form-control" id="confirmPassword" placeholder="Please Confirm Your Password" maxlength="12" required>
 							</div>
 							<div>
-								<input type="submit" onclick="registerUser()" id="submitform" href="afterSignUp.php"></input>
+								<input type="submit" id="submitform"></input>
 							</div>
 					</form>
       	</div>

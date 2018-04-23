@@ -24,7 +24,7 @@
 		$from = "ymahmou@masonlive.gmu.edu"; // this is the sender's Email address
 		$subject = "Please Confirm you CampusEats Account";
 		$message = "Thanks for signing up for CampusEats, Here's your verification code: ".uID.
-		" Just insert your verification code in the link ".<a href="initialLogin.php">HERE!</a>
+		" Just insert your verification code in the link <a href='initialLogin.php'>HERE!</a>";
 		$message = wordwrap($message,70);
 		$headers = "From:" . $from;
 		mail($to,$subject,$message,$headers);
