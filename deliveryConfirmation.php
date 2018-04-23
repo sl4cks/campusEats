@@ -53,9 +53,6 @@
 			<div class="text-center">
       	<h1>Delivery Confirmed!</h1>
     	</div>
-			<div>
-				<h3>Riddle</h3>
-			</div>
 		</div>
   </div>
 

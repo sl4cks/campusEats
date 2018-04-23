@@ -53,8 +53,6 @@
 			<div class="text-center">
       	<h1>Your Order is Being Delivered!</h1>
     	</div>
-			<br>
-      <h2>Here's your riddle:</h2>
 		</div>
   </div>
 
