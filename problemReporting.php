@@ -21,15 +21,15 @@
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
 
-	$resultcount = mysql_numrows($sqlsearch);
+	$resultcount = mysqli_numrows($sqlsearch);
 
 	if ($resultcount > 0) {
 		$formID = rand();
 	}
 
-	mysql_query("INSERT INTO 'ProblemReportingDatabase' ('formID', 'problemDescription')
+	mysqli_query($conn, "INSERT INTO ProblemReportingDatabase (formID, problemDescription)
                                VALUES ('$formID', '$problemDescription')")
-    or die(mysql_error());
+    or die(mysqli_error($conn));
 		$conn->close();
 ?>
 <html>
@@ -81,7 +81,6 @@
       </div>
       <div class="form-group">
         <label for="description">Description of Problem</label>
-        <!-- <input type="text" class="form-control"  id="problem description" placeholder="What was the problem with your order?"> -->
 				<textarea class="form-control" id="problemdescription" rows="3" placeholder="What was the problem with your order?" required></textarea>
       </div>
 			<div>
@@ -89,11 +88,6 @@
 			</div>
 		</form>
     </div>
-
-    <!-- <div>
-      <button type="button" class="btn btn-secondary" data-dismiss="cancelOrder">Cancel</button>
-      <button type="button" class="btn btn-primary">Submit</button>
-    </div> -->
   </div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
