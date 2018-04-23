@@ -59,10 +59,6 @@
 								<label for="createPassword">Password</label>
 								<input type="password" name="password" class="form-control" id="createPassword" placeholder="Create a Password" maxlength="12" required>
 							</div>
-							<div class="form-group">
-								<label for="confirmPassword">Confirm Password</label>
-								<input type="password" class="form-control" id="confirmPassword" placeholder="Please Confirm Your Password" maxlength="12" required>
-							</div>
 							<div>
 								<input type="submit" id="submitform"></input>
 							</div>
