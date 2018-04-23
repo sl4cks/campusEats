@@ -19,14 +19,14 @@
 
 	$sql_form = 'SELECT * FROM FormsDatabase';
 	$query_form = mysqli_query($conn, $sql_form);
-	
+
 	$sql_acc = 'SELECT  * FROM UserAccountsDatabase';
 	$query_acc = mysqli_query($conn, $sql_acc);
 
 	if (!$query_form) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
-	
+
 	if (!$query_acc) {
 		die ('SQL Error: ' . mysqli_error($conn));
 	}
@@ -36,8 +36,8 @@
 	if ($resultcount > 0) {
 		$formID = rand();
 	}
-	//check here for error.	
-	$sql  = "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments) VALUES (?, ?, ?, ?, ?)");
+	//check here for error.
+	$sql  = "INSERT INTO FormsDatabase (formID, orderName, orderLocation, delivLocation, comments) VALUES (?, ?, ?, ?, ?)";
 	$stmt = mysqli_prepare($sql);
 	$stmt->bind_param("isss", $formID $_POST['formID'], $_POST['order'], $_POST['location'], $_POST['delivery'], $_POST['comments']);
 	$stmt->execute();
@@ -134,7 +134,7 @@
 										");
 						}
 					?>
-				
+
 					<input type="submit" id="submitform" onclick = "updatetoken()"></input>
 				</div>
 		</form>
